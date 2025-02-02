@@ -6,6 +6,9 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
+    
+    /* 更換鼠標為自訂圖片 */
+    cursor: url('https://i.imgur.com/vb9Xzcg.png'), auto;
 }
 
 .container {
@@ -50,33 +53,34 @@ body {
     opacity: 0.8;
 }
 
-/* 動畫：交替放大縮小 */
-@keyframes growShrink {
+/* 動畫：放大 */
+@keyframes grow {
     0%, 100% {
         transform: scale(1);
     }
-    25% {
+    50% {
         transform: scale(1.5); /* 放大 */
     }
-    50% {
-        transform: scale(1); /* 還原到正常大小 */
+}
+
+/* 動畫：縮小 */
+@keyframes shrink {
+    0%, 100% {
+        transform: scale(1);
     }
-    75% {
+    50% {
         transform: scale(0.6); /* 縮小 */
     }
-    100% {
-        transform: scale(1); /* 還原 */
-    }
 }
 
-/* Discord按鈕動畫 */
+/* Discord按鈕動畫：放大 */
 .button.discord {
-    animation: growShrink 3s ease-in-out infinite;
+    animation: grow 2s ease-in-out infinite;
 }
 
-/* Roblox按鈕動畫 */
+/* Roblox按鈕動畫：縮小 */
 .button.roblox {
-    animation: growShrink 3s ease-in-out infinite;
+    animation: shrink 2s ease-in-out infinite;
 }
 
 /* 頁腳文字 */
@@ -93,5 +97,6 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
 
 
