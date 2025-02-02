@@ -88,6 +88,18 @@
             color: white;
             font-size: 18px;
         }
+
+        /* 創作者和創作時間右下角 */
+        .creator-info {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 14px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -97,8 +109,9 @@
         <div class="menu">
             常用的連結
             <div class="dropdown-content">
+                <a href="index.html">首頁</a> <!-- 返回首頁 -->
                 <a href="group-links.html" target="_blank">群族</a>
-                <a href="admin-list.html" target="_blank">管理員名單</a> <!-- 連結到管理員名單頁面 -->
+                <a href="admin-list.html" target="_blank">管理員名單</a>
                 <a href="photo-gallery.html" target="_blank">照片區</a>
             </div>
         </div>
@@ -112,13 +125,23 @@
     <h1>歡迎來到抹茶製作的網站</h1>
     <p class="small-text">您可以看到右上角並按下去進行觀看</p>
 
+    <!-- 創作者和創作時間 右下角 -->
+    <div class="creator-info">
+        <p>創作者: 抹茶</p>
+        <p>創作時間: 2025/2/2 下午09:53分創造出來</p>
+    </div>
+
     <!-- 頁尾 -->
     <div class="footer">
-        <!-- 已刪除 "必須兩個都加入主播才能幫忙喔" -->
+        <p>感謝您的支持！</p>
     </div>
 
 </body>
 </html>
+
+
+
+
 
 
 
