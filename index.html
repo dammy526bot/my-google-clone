@@ -20,11 +20,62 @@
         }
 
         /* 右上角選單 */
-        #menu-container {
+        .top-right-corner {
             position: fixed;
             top: 20px;
             right: 20px;
             z-index: 100;
+        }
+
+        .menu {
+            background-color: #333;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            color: white;
+            text-align: center;
+            display: inline-block;
+            position: relative;
+        }
+
+        /* 下拉箭頭 */
+        .arrow {
+            margin-left: 10px;
+            font-size: 14px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* 預設隱藏選單 */
+        .dropdown-content {
+            display: none; /* 初始隱藏選單 */
+            background-color: #333;
+            position: absolute;
+            top: 40px;
+            right: 0;
+            width: 200px;
+            border-radius: 5px;
+            z-index: 100;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #555;
+        }
+
+        /* 顯示選單時箭頭旋轉 */
+        .menu.open .arrow {
+            transform: rotate(180deg); /* 箭頭旋轉 */
+        }
+
+        /* 當選單展開時顯示下拉選項 */
+        .menu.open .dropdown-content {
+            display: block; /* 顯示選單 */
         }
 
         /* 主要內容 */
@@ -57,7 +108,19 @@
 <body>
 
     <!-- 右上角選單 -->
-    <div id="menu-container"></div>
+    <div class="top-right-corner">
+        <div class="menu" id="menu">
+            常用的連結
+            <span class="arrow">&#9660;</span> <!-- 下拉箭頭 -->
+            <div class="dropdown-content" id="dropdown">
+                <a href="index.html" target="_blank">🏠 首頁</a>
+                <a href="group-links.html" target="_blank">🔗 群族</a>
+                <a href="admin-list.html" target="_blank">🛠 管理員名單</a>
+                <a href="photo-gallery.html" target="_blank">📷 照片區</a>
+            </div>
+        </div>
+    </div>
+    
 
     <!-- 中央內容 -->
     <div class="content">
@@ -71,22 +134,19 @@
         <p>創作時間: <b>2025/2/2 下午09:53</b> 創造出來</p>
     </div>
 
+    <!-- JavaScript 用來控制選單顯示與隱藏 -->
     <script>
-        // 用 JavaScript 載入 menu.html，確保每個頁面都有選單
-        function loadMenu() {
-            fetch('menu.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('menu-container').innerHTML = data;
-                })
-                .catch(error => console.error('載入選單時發生錯誤:', error));
-        }
-
-        loadMenu(); // 載入選單
+        document.getElementById('menu').addEventListener('click', function() {
+            this.classList.toggle('open');  // 切換選單顯示與隱藏
+        });
     </script>
 
 </body>
 </html>
+
+
+
+
 
 
 

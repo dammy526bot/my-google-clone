@@ -21,76 +21,62 @@ body {
     margin-top: 20px;
 }
 
-/* 按鈕基礎樣式 */
-.button {
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    margin: 10px;
-    font-size: 16px;
-    cursor: pointer;
+/* 右上角選單 */
+.top-right-corner {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.menu {
+    background-color: #333;
     border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+}
+
+/* 下拉箭頭 */
+.arrow {
+    margin-left: 10px;
+    font-size: 14px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 預設隱藏選單 */
+.dropdown-content {
+    display: none; /* 初始隱藏選單 */
+    background-color: #333;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 200px;
+    border-radius: 5px;
+    z-index: 100;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
     text-decoration: none;
-    transition: transform 0.5s ease-in-out;
-    transition: background-color 0.3s ease-in-out;
-}
-
-/* 藍色按鈕 - Discord */
-.button.discord {
-    background-color: #007bff; /* 藍色 */
-}
-
-/* 紅色按鈕 - Roblox */
-.button.roblox {
-    background-color: #ff0000; /* 紅色 */
-}
-
-/* 按鈕懸停效果 */
-.button:hover {
-    opacity: 0.8;
-}
-
-/* 動畫：交替放大縮小 */
-@keyframes growShrink {
-    0%, 100% {
-        transform: scale(1);
-    }
-    25% {
-        transform: scale(1.5); /* 放大 */
-    }
-    50% {
-        transform: scale(1); /* 還原到正常大小 */
-    }
-    75% {
-        transform: scale(0.6); /* 縮小 */
-    }
-    100% {
-        transform: scale(1); /* 還原 */
-    }
-}
-
-/* Discord按鈕動畫 */
-.button.discord {
-    animation: growShrink 3s ease-in-out infinite;
-}
-
-/* Roblox按鈕動畫 */
-.button.roblox {
-    animation: growShrink 3s ease-in-out infinite;
-}
-
-/* 頁腳文字 */
-.footer {
-    margin-top: 30px;
-    font-size: 18px;
-}
-
-/* Logo 圖片 */
-.logo {
-    max-width: 200px;
-    margin-bottom: 20px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+/* 顯示選單時箭頭旋轉 */
+.menu.open .arrow {
+    transform: rotate(180deg); /* 箭頭旋轉 */
+}
+
+/* 當選單展開時顯示下拉選項 */
+.menu.open .dropdown-content {
+    display: block; /* 顯示選單 */
 }
 
