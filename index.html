@@ -1,19 +1,119 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GOGLE</title>
-    <link rel="stylesheet" href="style.css">
+    <title>網站專區</title>
+    <style>
+        body {
+            background-color: #004d00; /* 深綠色背景 */
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        /* 按鈕動畫：交替放大和縮小 */
+        @keyframes growShrink {
+            0%, 100% {
+                transform: scale(1); /* 初始大小 */
+            }
+            50% {
+                transform: scale(10); /* 放大到 10 倍 */
+            }
+        }
+
+        /* 按鈕基礎樣式 */
+        .button {
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* Discord按鈕：藍色 + 動畫 */
+        .button.discord {
+            background-color: #007bff; /* 藍色 */
+            animation: growShrink 1s ease-in-out infinite;
+        }
+
+        /* Roblox按鈕：紅色 + 動畫 */
+        .button.roblox {
+            background-color: #ff0000; /* 紅色 */
+            animation: growShrink 1s ease-in-out infinite reverse;
+        }
+
+        /* 按鈕懸停效果 */
+        .button:hover {
+            opacity: 0.8;
+        }
+
+        /* 頁腳文字 */
+        .footer {
+            margin-top: 30px;
+            font-size: 18px;
+        }
+
+        /* Logo 圖片 */
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>GOGLE</h1>
-        <form id="searchForm">
-            <input type="text" id="searchInput" placeholder="搜尋 Google...">
-            <button type="submit">搜尋</button>
-        </form>
+        <!-- Logo -->
+        <img src="https://i.imgur.com/2Ymgnxz.png" alt="Logo" class="logo">
+        
+        <!-- Buttons -->
+        <div class="buttons">
+            <a href="https://discord.com/invite/abCDeFg" class="button discord">加入 Discord 群組</a>
+            <a href="https://www.roblox.com/groups/12345678/roblox-group-name" class="button roblox">加入 Roblox 群組</a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            必須兩個都加入主播才能幫忙喔
+        </div>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

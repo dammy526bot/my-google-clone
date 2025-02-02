@@ -1,8 +1,20 @@
-// script.js
-document.getElementById("searchForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // 防止表單提交刷新頁面
-    let query = document.getElementById("searchInput").value; // 獲取輸入的內容
-    if (query) {
-        window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`; // 跳轉到 Google 搜尋結果
-    }
-});
+
+// 獲取按鈕元素
+const discordButton = document.getElementById('discordButton');
+const robloxButton = document.getElementById('robloxButton');
+
+// 設定動畫間隔時間 (毫秒)
+const animationDuration = 1000; // 1秒
+
+// 讓按鈕交替變大和變小
+setInterval(() => {
+    // 放大 Discord 按鈕，縮小 Roblox 按鈕
+    discordButton.style.transform = 'scale(1.5)';
+    robloxButton.style.transform = 'scale(0.6)';
+
+    setTimeout(() => {
+        // 還原 Discord 按鈕和 Roblox 按鈕大小
+        discordButton.style.transform = 'scale(1)';
+        robloxButton.style.transform = 'scale(1)';
+    }, animationDuration); // 還原時間要等到動畫完成
+}, animationDuration * 2); // 每 2 秒交替一次

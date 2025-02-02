@@ -1,43 +1,97 @@
-/* style.css */
+/* 基本頁面樣式 */
 body {
+    background-color: #004d00; /* 深綠色背景 */
+    color: white;
     font-family: Arial, sans-serif;
     text-align: center;
-    margin: 100px;
-    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
+    position: relative;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
-h1 {
-    font-size: 50px;
-    color: #4285F4;
-    font-weight: bold;
+.buttons {
+    margin-top: 20px;
 }
 
-input {
-    width: 400px;
-    padding: 10px;
-    font-size: 16px;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-top: 10px;
-    background-color: #4285F4;
+/* 按鈕基礎樣式 */
+.button {
     color: white;
     border: none;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
+    text-decoration: none;
+    transition: transform 0.5s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 }
 
-button:hover {
-    background-color: #357ae8;
+/* 藍色按鈕 - Discord */
+.button.discord {
+    background-color: #007bff; /* 藍色 */
 }
+
+/* 紅色按鈕 - Roblox */
+.button.roblox {
+    background-color: #ff0000; /* 紅色 */
+}
+
+/* 按鈕懸停效果 */
+.button:hover {
+    opacity: 0.8;
+}
+
+/* 動畫：交替放大縮小 */
+@keyframes growShrink {
+    0%, 100% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.5); /* 放大 */
+    }
+    50% {
+        transform: scale(1); /* 還原到正常大小 */
+    }
+    75% {
+        transform: scale(0.6); /* 縮小 */
+    }
+    100% {
+        transform: scale(1); /* 還原 */
+    }
+}
+
+/* Discord按鈕動畫 */
+.button.discord {
+    animation: growShrink 3s ease-in-out infinite;
+}
+
+/* Roblox按鈕動畫 */
+.button.roblox {
+    animation: growShrink 3s ease-in-out infinite;
+}
+
+/* 頁腳文字 */
+.footer {
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+/* Logo 圖片 */
+.logo {
+    max-width: 200px;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
