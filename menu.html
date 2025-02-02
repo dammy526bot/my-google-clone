@@ -1,0 +1,56 @@
+<style>
+    .menu {
+        background-color: #333;
+        border-radius: 5px;
+        padding: 10px;
+        cursor: pointer;
+        color: white;
+        text-align: center;
+    }
+
+    .menu:hover {
+        background-color: #555;
+    }
+
+    /* 選單內容 */
+    .dropdown-content {
+        display: none;
+        background-color: #333;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        width: 200px;
+        border-radius: 5px;
+        z-index: 100;
+    }
+
+    /* 按鈕樣式 */
+    .dropdown-content a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #555;
+    }
+
+    /* 顯示選單 */
+    .menu:hover .dropdown-content {
+        display: block;
+    }
+</style>
+
+<div class="menu">
+    常用的連結
+    <div class="dropdown-content">
+        <a href="index.html">首頁</a>
+        <a href="group-links.html">群族</a>
+        <a href="admin-list.html">管理員名單</a>
+        <a href="photo-gallery.html">照片區</a>
+    </div>
+</div>
+
+
+
