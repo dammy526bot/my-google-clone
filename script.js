@@ -19,4 +19,3 @@ setInterval(() => {
     }, animationDuration); // 還原時間要等到動畫完成
 }, animationDuration * 2); // 每 2 秒交替一次
 
-<link rel="stylesheet" href="styles.css"></link>

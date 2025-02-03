@@ -1,4 +1,51 @@
+<div class="top-right-corner">
+    <div class="menu" onclick="toggleMenu()">
+        常用的連結 <span class="arrow">▼</span>
+    </div>
+    <div class="dropdown-content" id="dropdown">
+        <a href="index.html">🏠 首頁</a>
+        <a href="group-links.html">🔗 群族</a>
+        <a href="admin-list.html">🛠 管理員名單</a>
+        <a href="photo-gallery.html">📷 照片區</a>
+    </div>
+</div>
+
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById("dropdown");
+        var arrow = document.querySelector(".arrow");
+
+        if (menu.style.display === "block") {
+            menu.style.display = "none";
+            arrow.innerHTML = "▼"; // 變回向下箭頭
+        } else {
+            menu.style.display = "block";
+            arrow.innerHTML = "▲"; // 變成向上箭頭
+        }
+    }
+
+    // 點擊其他地方時自動關閉選單
+    document.addEventListener("click", function(event) {
+        var menu = document.getElementById("dropdown");
+        var menuButton = document.querySelector(".menu");
+        var arrow = document.querySelector(".arrow");
+
+        if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
+            menu.style.display = "none";
+            arrow.innerHTML = "▼"; // 關閉時箭頭變回向下
+        }
+    });
+</script>
+
 <style>
+    /* 右上角選單 */
+    .top-right-corner {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 100;
+    }
+
     .menu {
         background-color: #333;
         border-radius: 5px;
@@ -6,13 +53,16 @@
         cursor: pointer;
         color: white;
         text-align: center;
+        display: flex;
+        align-items: center;
+        gap: 5px;
     }
 
     .menu:hover {
         background-color: #555;
     }
 
-    /* 選單內容 */
+    /* 選單內容（預設隱藏） */
     .dropdown-content {
         display: none;
         background-color: #333;
@@ -35,22 +85,4 @@
     .dropdown-content a:hover {
         background-color: #555;
     }
-
-    /* 顯示選單 */
-    .menu:hover .dropdown-content {
-        display: block;
-    }
 </style>
-
-<div class="menu">
-    常用的連結
-    <div class="dropdown-content">
-        <a href="index.html">首頁</a>
-        <a href="group-links.html">群族</a>
-        <a href="admin-list.html">管理員名單</a>
-        <a href="photo-gallery.html">照片區</a>
-    </div>
-</div>
-
-
-
